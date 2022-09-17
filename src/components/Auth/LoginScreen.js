@@ -8,6 +8,7 @@ import { fetchSinToken } from '../../helpers/fetch'
 
 import Swal from 'sweetalert2'
 import { ChooseGroup } from './ChooseGroup'
+import { types } from '../../types/types';
 
 export const LoginScreen = ({ history }) => {
     const [error, setError] = React.useState(false);
@@ -36,9 +37,10 @@ export const LoginScreen = ({ history }) => {
 
                 const { user: { groups } } = resp
                 setIsLoading(false);
+                console.log("GRPUPS", groups);
                 if (groups.length === 0 || !groups) return setError('No tiene acceso a este sitio')
-                if (groups.length === 1 && groups[0].name !== 'CO.PMXCO.BOG.A01') return setError('No pertenece a este grupo')
-                if (groups.length === 1 && groups[0].name === 'CO.PMXCO.BOG.A01') return dispatch(startLogin(resp));
+                if (groups.length === 1 && groups[0].name !== types.groupName) return setError('No pertenece a este grupo')
+                if (groups.length === 1 && groups[0].name === types.groupName) return dispatch(startLogin(resp));
 
                 setIsSelect(true);
                 setcountGroup(groups);

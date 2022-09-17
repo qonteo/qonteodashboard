@@ -7,6 +7,8 @@ export const getPersondata = () => {
         const groupId=groups.filter(g=>g.code===types.groupName)[0].id;
         const resp = await fetchConToken(`/get-person-graphics?heatmap_p=true&age_range_p=true&group_id=${groupId}`);
         const body = await resp.json();
+        console.log("RESP", body);
+        
         const { today_total, today_female, today_male, heatmap, heatmap_range,
             yesterday_total, yesterday_female, yesterday_male,
             week_total, week_female, week_male,

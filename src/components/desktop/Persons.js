@@ -20,6 +20,7 @@ import { types } from '../../types/types';
 
 const currentDate = moment().format("YYYY-MM-DD");
 const initDate = moment('2020-07-01').format("YYYY-MM-DD");
+
 export const PersonDesktop = () => {
     const dispatch = useDispatch();
     const { isMenu } = useSelector(state => state.ui);
@@ -81,6 +82,7 @@ export const PersonDesktop = () => {
         dispatch(getPersondata());
     }, [dispatch])
 
+    
     return (
         <div className={`_d__grid ${!isMenu ? "active" : ""}`}>
             <div>

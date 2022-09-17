@@ -2,6 +2,7 @@ export const types={
     groupUrl: 'dashboard',
     groupName: 'Qonteo',
     groupId: '12169343',
+    
     authChecking:'[auth] Checking login state',
     authCheckingFinish: '[auth] Finish Checking login state',
     authStartLogin: '[auth] Start login',
