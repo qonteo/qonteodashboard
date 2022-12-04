@@ -1,2 +1,0 @@
-# qonteodashboard
-Default Dashboard
